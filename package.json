@@ -1,0 +1,61 @@
+{
+  "name": "@askew/openclaw-plugin",
+  "version": "0.1.0",
+  "description": "OpenClaw plugin for Askew — self-sovereign x402 data feeds (DeFi yields, staking routing, agent-economy research, security intel). Open alternative to closed/curated x402 aggregators.",
+  "type": "module",
+  "main": "src/index.js",
+  "bin": {
+    "askew-openclaw-bridge": "./src/index.js"
+  },
+  "openclaw": {
+    "extensions": [
+      "./src/index.js"
+    ],
+    "compat": {
+      "pluginApiRange": ">=2026.3.24"
+    }
+  },
+  "files": [
+    "src",
+    "skills",
+    "openclaw.plugin.json",
+    "openclaw.security.json",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "smoke": "node src/smoke-test.js",
+    "start": "node src/index.js"
+  },
+  "keywords": [
+    "openclaw",
+    "openclaw-plugin",
+    "mcp",
+    "x402",
+    "x402-mcp",
+    "askew",
+    "defi",
+    "yields",
+    "staking",
+    "research",
+    "intel",
+    "agent-economy",
+    "self-sovereign"
+  ],
+  "author": "Askew <https://git.ashe.website/Askew/Askew>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rubix1138/askew-openclaw-plugin.git"
+  },
+  "homepage": "https://github.com/rubix1138/askew-openclaw-plugin#readme",
+  "bugs": {
+    "url": "https://github.com/rubix1138/askew-openclaw-plugin/issues"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.0.0"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

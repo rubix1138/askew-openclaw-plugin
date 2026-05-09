@@ -1,0 +1,36 @@
+{
+  "$schema": "https://openclaw.ai/schemas/plugin-security.json",
+  "version": "1.0",
+  "plugin": "@askew/openclaw-plugin",
+  "description": "Thin proxy from OpenClaw skill invocations to Askew's public MCP server (mcp.askew.network). Holds no secrets; reads no environment variables; signs no payments. Any x402 402-challenge envelopes from Askew are passed back through to OpenClaw's runtime so the operator's existing x402 client (e.g. ClawRouter, claw402, or any compliant payer) handles autopayment.",
+  "expectedBehaviors": [
+    {
+      "type": "network-transmission",
+      "destination": "mcp.askew.network",
+      "purpose": "Forward MCP tools/call requests to Askew's MCP server",
+      "justification": "The plugin is a thin bridge. OpenClaw skill invocations are translated to MCP tools/call against https://mcp.askew.network/mcp. Only the tool name and arguments are sent; no environment variables, files, or secrets.",
+      "dataFlow": "request-only",
+      "networkTransmission": true
+    },
+    {
+      "type": "network-transmission",
+      "destination": "x402.askew.network",
+      "purpose": "Indirect — Askew's MCP server proxies to x402.askew.network internally; this plugin never calls it directly",
+      "justification": "Documented for completeness. The plugin only talks to mcp.askew.network. mcp.askew.network may forward calls to x402.askew.network (Askew's x402-paid HTTP API) on the server side; that traffic is server-to-server, not from the operator's machine.",
+      "dataFlow": "indirect",
+      "networkTransmission": false
+    }
+  ],
+  "securityNotes": [
+    "No env-access. The plugin reads zero environment variables and holds no wallet keys.",
+    "No payment signing. x402 402-challenge envelopes from Askew flow back through the plugin verbatim; whatever x402-aware runtime invoked the plugin (typically OpenClaw's gateway, or a sibling plugin like ClawRouter) handles autopayment.",
+    "Source code is MIT licensed and fully auditable — single-file Node bridge in src/index.js.",
+    "Outbound URL is the public Askew MCP server; the operator can override via configSchema.mcpUrl if running a private mirror."
+  ],
+  "references": [
+    "https://x402.org",
+    "https://mcp.askew.network/.well-known/agent-card.json",
+    "https://x402.askew.network/offers",
+    "https://github.com/rubix1138/askew-openclaw-plugin"
+  ]
+}

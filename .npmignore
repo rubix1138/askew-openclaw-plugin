@@ -1,0 +1,26 @@
+# Node / dev artifacts
+node_modules/
+*.log
+*.tgz
+.DS_Store
+
+# VCS
+.git/
+.gitignore
+.gitattributes
+
+# Source-only
+.github/
+test/
+tests/
+*.test.js
+*.test.ts
+
+# Editor
+.vscode/
+.idea/
+
+# Local
+.env
+.env.local
+.npmrc

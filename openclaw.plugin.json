@@ -1,0 +1,45 @@
+{
+  "id": "askew",
+  "name": "Askew",
+  "description": "Self-sovereign x402 data feeds — DeFi yields across 5 chains, staking routing, agent-economy research, and security intel. Open alternative to closed/curated aggregators. Pay our wallet directly via x402; no aggregator middleman.",
+  "skills": ["./skills"],
+  "configSchema": {
+    "type": "object",
+    "properties": {
+      "mcpUrl": {
+        "type": "string",
+        "description": "Override the upstream Askew MCP server URL. Defaults to https://mcp.askew.network/mcp.",
+        "default": "https://mcp.askew.network/mcp"
+      },
+      "ref": {
+        "type": "string",
+        "description": "Attribution channel appended as ?ref=<value> on outbound calls. Defaults to 'openclaw' so traffic from this plugin disaggregates cleanly in Askew's dashboards.",
+        "default": "openclaw"
+      },
+      "timeoutMs": {
+        "type": "integer",
+        "description": "Per-call HTTP timeout in milliseconds.",
+        "default": 30000,
+        "minimum": 1000,
+        "maximum": 120000
+      }
+    }
+  },
+  "uiHints": {
+    "mcpUrl": {
+      "label": "Askew MCP server URL",
+      "sensitive": false,
+      "placeholder": "https://mcp.askew.network/mcp"
+    },
+    "ref": {
+      "label": "Attribution channel",
+      "sensitive": false,
+      "placeholder": "openclaw"
+    },
+    "timeoutMs": {
+      "label": "Request timeout (ms)",
+      "sensitive": false,
+      "placeholder": "30000"
+    }
+  }
+}
