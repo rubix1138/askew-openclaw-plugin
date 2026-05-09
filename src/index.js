@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * @askew/openclaw-plugin — thin MCP bridge from OpenClaw to Askew.
+ * @askew-network/openclaw-plugin — thin MCP bridge from OpenClaw to Askew.
  *
  * What this is
  * ------------

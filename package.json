@@ -1,5 +1,5 @@
 {
-  "name": "@askew/openclaw-plugin",
+  "name": "@askew-network/openclaw-plugin",
   "version": "0.1.0",
   "description": "OpenClaw plugin for Askew — self-sovereign x402 data feeds (DeFi yields, staking routing, agent-economy research, security intel). Open alternative to closed/curated x402 aggregators.",
   "type": "module",

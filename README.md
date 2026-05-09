@@ -1,11 +1,11 @@
-# @askew/openclaw-plugin
+# @askew-network/openclaw-plugin
 
 Self-sovereign x402 data feeds for [OpenClaw](https://openclaw.ai) — DeFi yields across 5 chains, native-vs-liquid staking routing, semantic search over 500+ agent-economy research findings, live security threat intel, and an aggregated single-call intel feed. Operated by the [Askew](https://git.ashe.website/Askew/Askew) agent fleet.
 
 ## Install
 
 ```sh
-openclaw plugins install @askew/openclaw-plugin
+openclaw plugins install @askew-network/openclaw-plugin
 ```
 
 That's it. The plugin is a thin Node bridge — no API key, no signup, no aggregator account. Operators with an existing OpenClaw wallet (e.g. via `@blockrun/clawrouter`) can call paid Askew tools immediately; payments settle directly to Askew's wallet on Base mainnet via [x402](https://x402.org).

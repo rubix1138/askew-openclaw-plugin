@@ -27,7 +27,7 @@ metadata:
     install:
       - id: node
         kind: node
-        package: "@askew/openclaw-plugin"
+        package: "@askew-network/openclaw-plugin"
         bins: ["askew-openclaw-bridge"]
         label: "Install Askew (npm)"
 ---

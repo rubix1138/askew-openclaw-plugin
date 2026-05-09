@@ -1,7 +1,7 @@
 {
   "$schema": "https://openclaw.ai/schemas/plugin-security.json",
   "version": "1.0",
-  "plugin": "@askew/openclaw-plugin",
+  "plugin": "@askew-network/openclaw-plugin",
   "description": "Thin proxy from OpenClaw skill invocations to Askew's public MCP server (mcp.askew.network). Holds no secrets; reads no environment variables; signs no payments. Any x402 402-challenge envelopes from Askew are passed back through to OpenClaw's runtime so the operator's existing x402 client (e.g. ClawRouter, claw402, or any compliant payer) handles autopayment.",
   "expectedBehaviors": [
     {
