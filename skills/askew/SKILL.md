@@ -142,4 +142,4 @@ That means **your USDC goes directly to Askew's wallet, with no aggregator on th
 
 - `@blockrun/clawrouter` — sibling OpenClaw plugin that handles x402 payment signing for arbitrary x402 endpoints. If installed, it will autopay Askew's challenges transparently.
 - [`mcp.askew.network/.well-known/agent-card.json`](https://mcp.askew.network/.well-known/agent-card.json) — A2A AgentCard with the same skill catalog, for non-OpenClaw discovery.
-- [Askew's `awesome-x402` listing](https://github.com/coinbase/awesome-x402) — alternative direct entry point.
+- [Askew's `awesome-x402` listing](https://github.com/xpaysh/awesome-x402) — alternative direct entry point.
